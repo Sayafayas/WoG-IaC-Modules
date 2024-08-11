@@ -1,1 +1,1 @@
-# WoG-Infrastructure
+# WoG-IaC-Modules
