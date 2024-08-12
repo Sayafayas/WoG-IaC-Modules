@@ -89,7 +89,3 @@ Thumbs.db
 docs/
 examples/
 terraform-iac-non-prod/
-modules/ecr
-modules/eks
-modules/kms
-modules/rds
