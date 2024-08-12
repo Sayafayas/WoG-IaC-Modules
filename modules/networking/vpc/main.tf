@@ -12,10 +12,10 @@ module "vpc" {
   name                               = "${var.deployment_prefix}-vpc"
   cidr                               = "${var.cidr}/16"
   azs                                = data.aws_availability_zones.available.names
-  private_subnets                    = ["${local.cidr_part}.0.0/19", "${local.cidr_part}.32.0/19", "${local.cidr_part}.64.0/19"]
-  public_subnets                     = ["${local.cidr_part}.96.0/22", "${local.cidr_part}.100.0/22", "${local.cidr_part}.104.0/22"]
-  database_subnets                   = ["${local.cidr_part}.108.0/24", "${local.cidr_part}.109.0/24", "${local.cidr_part}.110.0/24"]
-  intra_subnets                      = ["${local.cidr_part}.111.0/24", "${local.cidr_part}.112.0/24", "${local.cidr_part}.113.0/24"]
+  private_subnets                    = ["${local.cidr_part}.0.0/19", "${local.cidr_part}.32.0/19"]
+  public_subnets                     = ["${local.cidr_part}.96.0/22", "${local.cidr_part}.100.0/22"]
+  database_subnets                   = ["${local.cidr_part}.108.0/24", "${local.cidr_part}.109.0/24"]
+  intra_subnets                      = ["${local.cidr_part}.111.0/24", "${local.cidr_part}.112.0/24"]
   enable_nat_gateway                 = true
   single_nat_gateway                 = var.single_nat_gateway
   one_nat_gateway_per_az             = var.one_nat_gateway_per_az
