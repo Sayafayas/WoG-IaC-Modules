@@ -45,7 +45,6 @@ module "eks" {
     vpc_security_group_ids = var.additional_eks_managed_node_sg_ids
   }
 
-  manage_aws_auth_configmap = true
 
   create_kms_key = false
   cluster_encryption_config = {
