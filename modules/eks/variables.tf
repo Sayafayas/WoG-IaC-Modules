@@ -43,6 +43,12 @@ variable "mgmt_desired_size" {
   type        = number
 }
 
+variable "iam_role_arn" {
+  description = "The ARN of the IAM role that will be used by the EKS cluster."
+  type        = string
+}
+
+
 ################################################################################
 # CloudWatch Log Group
 ################################################################################
