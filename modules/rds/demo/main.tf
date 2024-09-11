@@ -9,6 +9,7 @@ locals {
 ################################################################################
 
 resource "random_password" "master_password" {
+  count            = var.create_secrets ? 1 : 0
   length           = 32
   min_lower        = 1
   min_numeric      = 3
@@ -21,6 +22,7 @@ resource "random_password" "master_password" {
 }
 
 resource "aws_secretsmanager_secret" "demo" {
+  count       = var.create_secrets ? 1 : 0
   name        = "${var.deployment_prefix}-demo-myrds-db"
   description = "Demo credentials like Database password etc. for ${var.deployment_prefix} environment."
   kms_key_id  = var.kms_key_id
@@ -31,6 +33,7 @@ resource "aws_secretsmanager_secret" "demo" {
 }
 
 resource "aws_secretsmanager_secret_version" "demo" {
+  count     = var.create_secrets ? 1 : 0
   secret_id = aws_secretsmanager_secret.demo.id
   secret_string = jsonencode({
     MYSQL_USER     = local.username
