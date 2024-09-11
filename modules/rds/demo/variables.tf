@@ -93,3 +93,9 @@ variable "my_password" {
   type        = string
   sensitive   = true
 }
+
+variable "create_secrets" {
+  description = "Flag to control the creation of secrets"
+  type        = bool
+  default     = false
+}
