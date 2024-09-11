@@ -107,7 +107,7 @@ module "demo" {
   db_name                = local.db_name
   username               = local.username
   create_random_password = false
-  password               = random_password.master_password.result
+  password               = random_password.master_password[0].result
   port                   = 3306
 
   multi_az               = var.multi_az
