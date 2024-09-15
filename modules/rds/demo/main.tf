@@ -34,7 +34,7 @@ resource "aws_secretsmanager_secret_version" "demo" {
   secret_id = aws_secretsmanager_secret.demo.id
   secret_string = jsonencode({
     MYSQL_USER     = local.username
-    MYSQL_PASSWORD = random_password.master_password[0].result
+    MYSQL_PASSWORD = random_password.master_password.result
     MYSQL_DATABASE = local.db_name
     MYSQL_HOST     = module.demo.db_instance_address
     MYSQL_PORT     = module.demo.db_instance_port
