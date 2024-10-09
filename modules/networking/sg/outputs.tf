@@ -5,5 +5,5 @@ output "all_worker_node_groups_sg_id" {
 
 output "eks_control_plane_sg_id" {
   description = "Control Panel SG"
-  value       = aws_security_group.eks_control_plane_sg_id
+  value       = aws_security_group.eks_control_plane.id
 }
