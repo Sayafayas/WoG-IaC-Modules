@@ -88,12 +88,6 @@ variable "performance_insights_enabled" {
   default     = false
 }
 
-variable "my_password" {
-  description = "My password"
-  type        = string
-  sensitive   = true
-}
-
 variable "create_secrets" {
   description = "Flag to control the creation of secrets"
   type        = bool
