@@ -83,7 +83,7 @@ resource "aws_security_group_rule" "extra_inbound_access" {
 
 module "demo" {
   source  = "terraform-aws-modules/rds/aws"
-  version = "5.9.0"
+  version = "6.9.0"
 
   identifier = local.db_instance_identifier
 
@@ -95,7 +95,6 @@ module "demo" {
   instance_class               = var.instance_class
   performance_insights_enabled = var.performance_insights_enabled
 
-  storage_type          = "gp3"
   allocated_storage     = var.allocated_storage
   max_allocated_storage = var.max_allocated_storage
   storage_encrypted     = true
@@ -103,7 +102,6 @@ module "demo" {
 
   db_name                = local.db_name
   username               = local.username
-  create_random_password = false
   password               = random_password.master_password.result
   port                   = 3306
 
