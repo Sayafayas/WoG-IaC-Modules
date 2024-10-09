@@ -6,5 +6,5 @@ variable "deployment_prefix" {
 variable "aws_iam_service_linked_role_autoscaling" {
   description = "Controls if AWS IAM Service linked role Autoscaling should be created."
   type        = bool
-  default     = false
+  default     = true
 }
