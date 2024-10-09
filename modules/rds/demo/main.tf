@@ -38,7 +38,6 @@ resource "aws_secretsmanager_secret_version" "demo" {
     MYSQL_DATABASE = local.db_name
     MYSQL_HOST     = module.demo.db_instance_address
     MYSQL_PORT     = module.demo.db_instance_port
-    SUPER_SECRET   = var.my_password
   })
 }
 
@@ -100,10 +99,10 @@ module "demo" {
   storage_encrypted     = true
   kms_key_id            = var.kms_key_id
 
-  db_name                = local.db_name
-  username               = local.username
-  password               = random_password.master_password.result
-  port                   = 3306
+  db_name  = local.db_name
+  username = local.username
+  password = random_password.master_password.result
+  port     = 3306
 
   multi_az               = var.multi_az
   publicly_accessible    = false
